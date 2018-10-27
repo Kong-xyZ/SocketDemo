@@ -32,7 +32,7 @@ public class Server {
         private Socket socket;
         private boolean flag = true;
 
-        public ClientHandler(Socket socket) {
+        ClientHandler(Socket socket) {
             this.socket = socket;
         }
 
@@ -51,7 +51,7 @@ public class Server {
                     // 客户端拿到一条数据
                     String str = socketInput.readLine();
                     if ("bye".equalsIgnoreCase(str)) {
-                        flag =false;
+                        flag = false;
                         // 回送
                         socketOutput.println("bye");
                     } else {
@@ -75,7 +75,7 @@ public class Server {
                 }
             }
 
-            System.out.println("客户端已退出: "+ socket.getInetAddress()
+            System.out.println("客户端已退出: " + socket.getInetAddress()
                     + " P:" + socket.getPort());
         }
     }

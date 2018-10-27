@@ -10,6 +10,7 @@ public class Client {
         Socket socket = new Socket();
         // 超时时间
         socket.setSoTimeout(3000);
+
         // 连接本地，端口2000；超时时间3000ms
         socket.connect(new InetSocketAddress(Inet4Address.getLocalHost(), 2000), 3000);
 
@@ -44,8 +45,6 @@ public class Client {
 
         boolean flag = true;
         do {
-
-
             // 键盘读取一行
             String str = input.readLine();
             // 发送到服务器
@@ -53,7 +52,6 @@ public class Client {
 
             // 从服务器读取一行
             String echo = socketBufferedReader.readLine();
-
             if ("bye".equalsIgnoreCase(echo)) {
                 flag = false;
             } else {
